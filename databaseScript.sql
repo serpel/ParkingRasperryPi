@@ -1,10 +1,12 @@
-use parking
-go
+
 
 create database parking;
 go
 
-create table Devices(
+use parking
+go
+
+create table dbo.Devices(
 	[DeviceId] smallint primary key identity(1,1) not null,
 	[Name] varchar(100) NOT NULL,
 	[Status] smallint NOT NULL,
