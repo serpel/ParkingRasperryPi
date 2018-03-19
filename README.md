@@ -1,5 +1,6 @@
 ### Requeriments
-- Node JS
+* Node JS
+* SQL Server express
 
 ## 1. Run the API:
 
