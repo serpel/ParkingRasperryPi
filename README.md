@@ -23,6 +23,10 @@ http://serverip/removeparking/:id
 http://serverip/getdevices
 ```
 
+:name -> Device Name
+:status -> 0 or 1 
+:id -> id of the device on database
+
 ## 2. Run the React project:
 
 ### `cd parking`
