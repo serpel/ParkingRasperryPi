@@ -1,4 +1,7 @@
-# 1. Run the API:
+### Requeriments
+- Node JS
+
+## 1. Run the API:
 
 Note: Before run the API you should run the database script file on SQL Server.
 
@@ -19,7 +22,7 @@ http://serverip/removeparking/:id
 http://serverip/getdevices
 ```
 
-# 2. Run the React project:
+## 2. Run the React project:
 
 ### `cd parking`
 ### `npm install`
