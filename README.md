@@ -17,10 +17,10 @@ Open [http://localhost:8091](http://localhost:8091) to view it in the browser.
 Note: If you are on developer mode the service will run on localhost, on production mode you will assign a public ip address.
 
 ```
-http://serverip/updateparking/:name.:status
-http://serverip/addparking/:name.:status
-http://serverip/removeparking/:id
-http://serverip/getdevices
+http://localhost:8091/updateparking/:name.:status
+http://localhost:8091/addparking/:name.:status
+http://localhost:8091/removeparking/:id
+http://localhost:8091/getdevices
 ```
 
 :name -> Device Name
