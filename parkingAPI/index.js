@@ -41,33 +41,17 @@ app.get('/updateparking/:name.:status', function(req, res){
                              where [Name] = ${name}`;
 
                 request.query(queryText, (err, recordset) => {
-                     if(err){
-                         
-                        console.log(err);
+                        if(err) console.log(err);
 
                         var data = {
                             success: false,
                             message: err,
                             device: name,
                             status: status,
-                            rowsAffected: 0
+                            rowsAffected: result.rowsAffected
                          }
 
                          res.send(data);
-                    }
-                })
-
-                request.on('done', result => {
-                    console.log(result.rowsAffected)
-
-                    var data = {
-                        success: true,
-                        message: '',
-                        device: name,
-                        status: status,
-                        rowsAffected: result.rowsAffected
-                    }
-                    res.send(data);
                 })
     });
     
@@ -90,7 +74,7 @@ app.get('/addparking/:name.:status', function(req, res){
                                 values('${name}', ${status}, getdate())`;
 
                 request.query(queryText, (err, recordset) => {
-                     if(err) console.log(err);
+                        if(err) console.log(err);
 
                          var data = {
                             success: false,
@@ -121,32 +105,17 @@ app.get('/removeparking/:id', function(req, res){
             var queryText = `delete from dbo.Devices where dbo.Devices.DeviceId = ${id}`;
 
                 request.query(queryText, (err, recordset) => {
-                     if(err){
-                         console.log(err);
+                        if(err) console.log(err);
 
                          var data = {
                             success: false,
                             message: err,
                             device: name,
                             status: status,
-                            rowsAffected: 0
+                            rowsAffected: recordset.rowsAffected
                          }
 
                          res.send(data);
-                     }
-                })
-
-                request.on('done', result => {
-                    console.log(result.rowsAffected)
-
-                    var data = {
-                        success: true,
-                        message: '',
-                        device: name,
-                        status: status,
-                        rowsAffected: result.rowsAffected
-                    }
-                    res.send(data);
                 })
     });
     
