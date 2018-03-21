@@ -38,17 +38,17 @@ app.get('/updateparking/:name.:status', function(req, res){
             
             var queryText = `update dbo.Devices set [Status] = ${status},\
                                 [UpdateDate]=getdate()\
-                             where [Name] = ${name}`;
+                             where [Name] = '${name}'`;
 
                 request.query(queryText, (err, recordset) => {
                         if(err) console.log(err);
 
                         var data = {
-                            success: false,
-                            message: err,
+                            success: true,
+                            message: 'updated record',
                             device: name,
                             status: status,
-                            rowsAffected: recordset.rowsAffected
+                            //rowsAffected: recordset.rowsAffected
                          }
 
                          res.send(data);
