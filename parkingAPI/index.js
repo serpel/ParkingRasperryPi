@@ -48,7 +48,7 @@ app.get('/updateparking/:name.:status', function(req, res){
                             message: err,
                             device: name,
                             status: status,
-                            rowsAffected: result.rowsAffected
+                            rowsAffected: recordset.rowsAffected
                          }
 
                          res.send(data);
@@ -77,11 +77,11 @@ app.get('/addparking/:name.:status', function(req, res){
                         if(err) console.log(err);
 
                          var data = {
-                            success: false,
-                            message: err,
+                            success: true,
+                            message: 'added device',
                             device: name,
                             status: status,
-                            rowsAffected: result.rowsAffected
+                            rowsAffected: recordset.rowsAffected
                          }
 
                          res.send(data);
@@ -108,10 +108,9 @@ app.get('/removeparking/:id', function(req, res){
                         if(err) console.log(err);
 
                          var data = {
-                            success: false,
-                            message: err,
-                            device: name,
-                            status: status,
+                            success: true,
+                            message: 'deleted record',
+                            device: id,
                             rowsAffected: recordset.rowsAffected
                          }
 
