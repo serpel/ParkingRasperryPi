@@ -38,7 +38,7 @@ class CheckboxListSecondary extends React.Component {
         .then((result) => {
             return result.json();
         }).then((data) => {
-            this.setState({ devices: data.devices})
+            this.setState({ devices: data})
         });
   }
 

@@ -135,18 +135,10 @@ app.get('/getdevices', function(request, response){
                 request.query(queryText, (err, recordset) => {
 
                      if(err) console.log(err);
+                      
+                     console.log("Success getdevices");
 
-                     if(recordset.recordset.length > 0)
-                     {
-                        console.log("Success getdevices");
-
-                        var result = {
-                            success: true, 
-                            devices: recordset.recordset
-                        }; 
-                     }
-
-                     response.send(result);
+                     response.send(recordset.recordset);
                  })
     });
     
